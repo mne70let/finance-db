@@ -1,16 +1,102 @@
-`# This is a sample Python script.
+#Import DB architecture
+from finanace_db.db_architecture import *
+#Import Asset class
+from finanace_db.asset_class import *
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+#Work with assets via dictionaty
+#assets={}
+#assets['flat_tmn'] = asset_class(name='flat_tmn', asset_subclass='real_estate', currency_name='rub')
+#assets['flat_tmn'].write_to_DB()
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+assets={}
+#assets['Flat_Tmn'] = asset_class(name='Flat_Tmn', asset_subclass='real_estate', currency_name='rub', provider_name = '-', purchase_price = 0, current_price = 0)
+assets['Flat_TMN'] = asset_class(name='Flat_TMN', asset_subclass='real_estate', currency_name='RUB', purchase_price='5451600', current_price='6639941')
+assets['Parking_TMN'] = asset_class(name='Parking_TMN', asset_subclass='real_estate', currency_name='RUB', purchase_price='850', current_price='1035283')
+assets['Карта Тинькофф'] = asset_class(name='Карта Тинькофф', asset_subclass='debit_card', currency_name='RUB', purchase_price='240', current_price='24000')
+assets['Карта Citibank - RUB Сергей'] = asset_class(name='Карта Citibank - RUB Сергей', asset_subclass='debit_card', currency_name='RUB', purchase_price='10', current_price='1000')
+assets['Карта Citibank - USD  Сергей'] = asset_class(name='Карта Citibank - USD  Сергей', asset_subclass='debit_card', currency_name='USD', purchase_price='0', current_price='0')
+assets['Карта Citibank - RUB Дарья'] = asset_class(name='Карта Citibank - RUB Дарья', asset_subclass='debit_card', currency_name='RUB', purchase_price='0', current_price='0')
+assets['Карта Citibank - EUR Дарья'] = asset_class(name='Карта Citibank - EUR Дарья', asset_subclass='debit_card', currency_name='EUR', purchase_price='31,267', current_price='3127')
+assets['Карта ВТБ - RUB Сергей'] = asset_class(name='Карта ВТБ - RUB Сергей', asset_subclass='debit_card', currency_name='RUB', purchase_price='10', current_price='1000')
+assets['Карта ВТБ - USD  Сергей'] = asset_class(name='Карта ВТБ - USD  Сергей', asset_subclass='debit_card', currency_name='USD', purchase_price='0', current_price='0')
+assets['Карта Сбербанк Сергей'] = asset_class(name='Карта Сбербанк Сергей', asset_subclass='debit_card', currency_name='RUB', purchase_price='0', current_price='0')
+assets['Карта Сбербанк Дарья'] = asset_class(name='Карта Сбербанк Дарья', asset_subclass='debit_card', currency_name='RUB', purchase_price='10', current_price='1000')
+assets['Карта Газпромбанк Дарья'] = asset_class(name='Карта Газпромбанк Дарья', asset_subclass='debit_card', currency_name='RUB', purchase_price='0', current_price='0')
+assets['Счет Сбер EUR Дарья'] = asset_class(name='Счет Сбер EUR Дарья', asset_subclass='debit_card', currency_name='EUR', purchase_price='15', current_price='1500')
+assets['Cash-USD-YUZ'] = asset_class(name='Cash-USD-YUZ', asset_subclass='cash', currency_name='USD', purchase_price='36,6', current_price='3660')
+assets['Cash-EUR-YUZ'] = asset_class(name='Cash-EUR-YUZ', asset_subclass='cash', currency_name='EUR', purchase_price='730', current_price='73000')
+assets['Cash-RUB-YUZ'] = asset_class(name='Cash-RUB-YUZ', asset_subclass='cash', currency_name='RUB', purchase_price='0', current_price='0')
+assets['Cash-TMN-USD'] = asset_class(name='Cash-TMN-USD', asset_subclass='cash', currency_name='USD', purchase_price='0', current_price='0')
+assets['Cash-TMN-EUR'] = asset_class(name='Cash-TMN-EUR', asset_subclass='cash', currency_name='EUR', purchase_price='10', current_price='1000')
+assets['Накопительный счет "Управляй"'] = asset_class(name='Накопительный счет "Управляй"', asset_subclass='deposit', currency_name='RUB', purchase_price='1418000', current_price='1418458')
+assets['Накопительный счет "Копилка"'] = asset_class(name='Накопительный счет "Копилка"', asset_subclass='deposit', currency_name='RUB', purchase_price='902', current_price='90222')
+assets['Накопительный счет "Копилка"'] = asset_class(name='Накопительный счет "Копилка"', asset_subclass='deposit', currency_name='RUB', purchase_price='1171000', current_price='1171284')
+assets['Накопительный счет'] = asset_class(name='Накопительный счет', asset_subclass='deposit', currency_name='RUB', purchase_price='352', current_price='35208')
+assets['Вклад Успех'] = asset_class(name='Вклад Успех', asset_subclass='deposit', currency_name='RUB', purchase_price='350', current_price='35467')
+assets['Сохраняй Онлайн Доллар'] = asset_class(name='Сохраняй Онлайн Доллар', asset_subclass='deposit', currency_name='USD', purchase_price='15', current_price='1500')
+assets['Brocker RUR'] = asset_class(name='Brocker RUR', asset_subclass='cash', currency_name='RUB', purchase_price='408', current_price='40800')
+assets['Brocker USD'] = asset_class(name='Brocker USD', asset_subclass='cash', currency_name='USD', purchase_price='87', current_price='8700')
+assets['Brocker EUR'] = asset_class(name='Brocker EUR', asset_subclass='cash', currency_name='EUR', purchase_price='0', current_price='0')
+assets['GAZP'] = asset_class(name='GAZP', asset_subclass='share_rus', currency_name='RUB', purchase_price='759,157', current_price='94175')
+assets['NVTK'] = asset_class(name='NVTK', asset_subclass='share_rus', currency_name='RUB', purchase_price='127,868', current_price='15416')
+assets['ROSN'] = asset_class(name='ROSN', asset_subclass='share_rus', currency_name='RUB', purchase_price='167,307', current_price='16417')
+assets['SIBN'] = asset_class(name='SIBN', asset_subclass='share_rus', currency_name='RUB', purchase_price='106,993', current_price='13206')
+assets['SNGSP'] = asset_class(name='SNGSP', asset_subclass='share_rus', currency_name='RUB', purchase_price='170,27', current_price='14793')
+assets['SBERP'] = asset_class(name='SBERP', asset_subclass='share_rus', currency_name='RUB', purchase_price='254,04', current_price='34348')
+assets['SBER'] = asset_class(name='SBER', asset_subclass='share_rus', currency_name='RUB', purchase_price='57,544', current_price='6186')
+assets['VTBR'] = asset_class(name='VTBR', asset_subclass='share_rus', currency_name='RUB', purchase_price='154,344', current_price='18850')
+assets['GMKN'] = asset_class(name='GMKN', asset_subclass='share_rus', currency_name='RUB', purchase_price='635,636', current_price='71448')
+assets['ENPG'] = asset_class(name='ENPG', asset_subclass='share_rus', currency_name='RUB', purchase_price='218,956', current_price='19644')
+assets['RUAL'] = asset_class(name='RUAL', asset_subclass='share_rus', currency_name='RUB', purchase_price='126,047', current_price='15139')
+assets['AGRO'] = asset_class(name='AGRO', asset_subclass='share_rus', currency_name='RUB', purchase_price='475,148', current_price='53807')
+assets['HYDR'] = asset_class(name='HYDR', asset_subclass='share_rus', currency_name='RUB', purchase_price='225,317', current_price='23050')
+assets['LSNGP'] = asset_class(name='LSNGP', asset_subclass='share_rus', currency_name='RUB', purchase_price='105,037', current_price='11452')
+assets['RTKMP'] = asset_class(name='RTKMP', asset_subclass='share_rus', currency_name='RUB', purchase_price='218,319', current_price='20716')
+assets['NMTP'] = asset_class(name='NMTP', asset_subclass='share_rus', currency_name='RUB', purchase_price='183,566', current_price='18644')
+assets['ABBV'] = asset_class(name='ABBV', asset_subclass='share_us', currency_name='USD', purchase_price='491', current_price='57700')
+assets['BIIB'] = asset_class(name='BIIB', asset_subclass='share_us', currency_name='USD', purchase_price='518', current_price='67300')
+assets['BMY'] = asset_class(name='BMY', asset_subclass='share_us', currency_name='USD', purchase_price='1,051', current_price='117')
+assets['CSCO'] = asset_class(name='CSCO', asset_subclass='share_us', currency_name='USD', purchase_price='720', current_price='90200')
+assets['CVS'] = asset_class(name='CVS', asset_subclass='share_us', currency_name='USD', purchase_price='508', current_price='58800')
+assets['DHI'] = asset_class(name='DHI', asset_subclass='share_us', currency_name='USD', purchase_price='891', current_price='117')
+assets['DG'] = asset_class(name='DG', asset_subclass='share_us', currency_name='USD', purchase_price='959', current_price='118')
+assets['XOM'] = asset_class(name='XOM', asset_subclass='share_us', currency_name='USD', purchase_price='657', current_price='87100')
+assets['IBM'] = asset_class(name='IBM', asset_subclass='share_us', currency_name='USD', purchase_price='769', current_price='86700')
+assets['JNJ'] = asset_class(name='JNJ', asset_subclass='share_us', currency_name='USD', purchase_price='948', current_price='104')
+assets['JPM'] = asset_class(name='JPM', asset_subclass='share_us', currency_name='USD', purchase_price='685', current_price='76600')
+assets['LDOS'] = asset_class(name='LDOS', asset_subclass='share_us', currency_name='USD', purchase_price='672', current_price='66500')
+assets['LMT'] = asset_class(name='LMT', asset_subclass='share_us', currency_name='USD', purchase_price='1,049', current_price='111')
+assets['MRK'] = asset_class(name='MRK', asset_subclass='share_us', currency_name='USD', purchase_price='1,065', current_price='107')
+assets['MSFT'] = asset_class(name='MSFT', asset_subclass='share_us', currency_name='USD', purchase_price='692', current_price='86000')
+assets['NEM'] = asset_class(name='NEM', asset_subclass='cmdty_fund', currency_name='USD', purchase_price='1,01', current_price='101')
+assets['PM'] = asset_class(name='PM', asset_subclass='share_us', currency_name='USD', purchase_price='687', current_price='80500')
+assets['REGI'] = asset_class(name='REGI', asset_subclass='share_us', currency_name='USD', purchase_price='409', current_price='41600')
+assets['TSN'] = asset_class(name='TSN', asset_subclass='share_us', currency_name='USD', purchase_price='1,353', current_price='144')
+assets['UNH'] = asset_class(name='UNH', asset_subclass='share_us', currency_name='USD', purchase_price='755', current_price='84100')
+assets['VZ'] = asset_class(name='VZ', asset_subclass='share_us', currency_name='USD', purchase_price='1,639', current_price='156')
+assets['VRTX'] = asset_class(name='VRTX', asset_subclass='share_us', currency_name='USD', purchase_price='843', current_price='80000')
+assets['V'] = asset_class(name='V', asset_subclass='share_us', currency_name='USD', purchase_price='872', current_price='95000')
+assets['REGN'] = asset_class(name='REGN', asset_subclass='share_us', currency_name='USD', purchase_price='476', current_price='58100')
+assets['CVX'] = asset_class(name='CVX', asset_subclass='share_us', currency_name='USD', purchase_price='939', current_price='92200')
+assets['INTC'] = asset_class(name='INTC', asset_subclass='share_us', currency_name='USD', purchase_price='1,425', current_price='124')
+assets['KMB'] = asset_class(name='KMB', asset_subclass='share_us', currency_name='USD', purchase_price='948', current_price='95100')
+assets['MU'] = asset_class(name='MU', asset_subclass='share_us', currency_name='USD', purchase_price='1,427', current_price='130')
+assets['T'] = asset_class(name='T', asset_subclass='share_us', currency_name='USD', purchase_price='1,545', current_price='150')
+assets['NEE'] = asset_class(name='NEE', asset_subclass='share_us', currency_name='USD', purchase_price='585', current_price='63400')
+assets['C'] = asset_class(name='C', asset_subclass='share_us', currency_name='USD', purchase_price='831', current_price='75700')
+assets['ETR:BAYN'] = asset_class(name='ETR:BAYN', asset_subclass='share_other', currency_name='EUR', purchase_price='961', current_price='90200')
+assets['NYSE:RDS.A'] = asset_class(name='NYSE:RDS.A', asset_subclass='share_other', currency_name='USD', purchase_price='1,109', current_price='124')
+assets['BABA'] = asset_class(name='BABA', asset_subclass='share_other', currency_name='USD', purchase_price='1,424', current_price='118')
+assets['VTBE'] = asset_class(name='VTBE', asset_subclass='share_other', currency_name='RUB', purchase_price='693,365', current_price='66623')
+assets['FXDM'] = asset_class(name='FXDM', asset_subclass='share_other', currency_name='RUB', purchase_price='208,264', current_price='20840')
+assets['VTBG'] = asset_class(name='VTBG', asset_subclass='cmdty_fund', currency_name='RUB', purchase_price='109,816', current_price='9635')
+assets['FXGD'] = asset_class(name='FXGD', asset_subclass='cmdty_fund', currency_name='RUB', purchase_price='294,816', current_price='27108')
+assets['FXTP'] = asset_class(name='FXTP', asset_subclass='bond_us', currency_name='RUB', purchase_price='1462847', current_price='1455471')
+assets['VTBM'] = asset_class(name='VTBM', asset_subclass='bond_rus', currency_name='RUB', purchase_price='480,465', current_price='48042')
+assets['Арсагера КР 1.55'] = asset_class(name='Арсагера КР 1.55', asset_subclass='bond_rus', currency_name='RUB', purchase_price='10', current_price='1011')
+assets['ОМС ВТБ .PLAT'] = asset_class(name='ОМС ВТБ .PLAT', asset_subclass='cmdty_fund', currency_name='RUB', purchase_price='364,18', current_price='36418')
+assets['ОФЗ-ПК 29012 16/11/22'] = asset_class(name='ОФЗ-ПК 29012 16/11/22', asset_subclass='bond_rus', currency_name='RUB', purchase_price='78,81', current_price='7881')
+assets['Сбербанк ПАО БО-37'] = asset_class(name='Сбербанк ПАО БО-37', asset_subclass='bond_rus', currency_name='RUB', purchase_price='25,952', current_price='2595')
+assets['Сбербанк БО 001Р-04R'] = asset_class(name='Сбербанк БО 001Р-04R', asset_subclass='bond_rus', currency_name='RUB', purchase_price='25,764', current_price='2576')
+assets['ОФЗ-ПК 29006 29/01/25'] = asset_class(name='ОФЗ-ПК 29006 29/01/25', asset_subclass='bond_rus', currency_name='RUB', purchase_price='389,62', current_price='38962')
+assets['ОФЗ-ПК 29012 16/11/22'] = asset_class(name='ОФЗ-ПК 29012 16/11/22', asset_subclass='bond_rus', currency_name='RUB', purchase_price='397,045', current_price='39705')
